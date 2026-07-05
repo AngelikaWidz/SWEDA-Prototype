@@ -12,17 +12,13 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+
+
 <!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="2" y="2" width="16" height="16" rx="4" fill="#E6127D" transform="rotate(-8 10 10)"/>
-        <rect x="21" y="2" width="16" height="16" rx="4" fill="#F7941D" transform="rotate(8 29 10)"/>
-        <rect x="2" y="21" width="16" height="16" rx="4" fill="#453B78" transform="rotate(8 10 29)"/>
-        <rect x="21" y="21" width="16" height="16" rx="4" fill="#F2C230" transform="rotate(-8 29 29)"/>
-      </svg>
-      sweda
+      <img class="logo-mark" src="cropped-sweda-logo2-e1705496806378.jpg" alt="SWEDA Logo">
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
@@ -48,13 +44,103 @@
 
 <main id="main">
 
-  <section class="todo-page">
-    <div class="container" style="max-width:640px;">
-      <span class="todo-badge">TODO — placeholder page</span>
-      <h1>Our Partners</h1>
-      <p>SWEDA works closely with Sandwell Council, Sandwell Family Hubs and other local partners to deliver our services. This page is a placeholder — add partner logos, case studies and partnership enquiry details here.</p>
-      <p style="color:var(--muted);font-size:0.9rem;"><em>TODO: add partner logos/case studies and a partnership enquiry form.</em></p>
-      <a href="contact.html" class="btn btn-pink" style="margin-top:12px;">Get In Touch</a>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container about-hero-grid">
+
+      <div class="photo-collage">
+        <div class="collage-circle collage-circle--small avatar-placeholder" role="img" aria-label="Photo placeholder — team celebrating together">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="collage-circle collage-circle--large avatar-placeholder" role="img" aria-label="Photo placeholder — community event with families">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 21h20M4 21V9l5-3 5 3v12M14 21V4l4 2v15"/></svg>
+        </div>
+      </div>
+
+      <div>
+        <h1>Partnerships | SWEDA</h1>
+        <p>At SWEDA, we believe lasting change happens through collaboration. By working alongside local authorities, businesses, educational providers, community organisations and funding partners, we're able to create opportunities that empower people, strengthen communities and make a lasting difference across Sandwell and the Black Country.</p>
+
+        <a href="fundraising.html" class="btn btn-pink">Donate To SWEDA</a>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ================= FUNDERS ================= -->
+  <section>
+    <div class="container">
+      <h2>Funders &amp; Partners</h2>
+      <div class="logo-strip">
+        <div class="funder-logo">Sandwell Metropolitan Borough Council</div>
+        <div class="funder-logo">Sandwell Family Hubs</div>
+        <div class="funder-logo">Add your funder logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY PARTNER WITH SWEDA? ================= -->
+  <section class="section-soft">
+    <div class="container service-hero-grid">
+      <div>
+        <h2>Why Partner with SWEDA?</h2>
+        <p>With over 30 years of experience supporting local communities, SWEDA has built a strong reputation for delivering person-centred services that create meaningful outcomes.</p>
+        <p>Our partnerships are built on shared values, local knowledge and a commitment to helping people overcome barriers and achieve their potential.</p>
+        <p>By partnering with SWEDA, you can benefit from:</p>
+        <ul>
+          <li>An experienced and trusted community organisation</li>
+          <li>Strong relationships across the local community</li>
+          <li>A shared commitment to creating positive social impact</li>
+        </ul>
+        <a href="contact.html" class="btn btn-indigo">Contact Us</a>
+      </div>
+      <div class="placeholder-img" style="min-height:280px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9Z"/><path d="M9 21V12h6v9"/></svg>
+        Photo placeholder — SWEDA centre, Church St
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section>
+    <div class="container">
+      <h2>Contact Form</h2>
+      <form class="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required>
+          </div>
+          <div class="form-field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+          </div>
+          <div class="form-field full">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field full">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-field full">
+            <label for="message">How Can We Help?</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="form-field full">
+            <div class="consent-row">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent" style="font-weight:400;">I consent to having this website collect my personal data via this form.</label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <button type="submit" class="btn btn-indigo">Send Message</button>
+            <div class="form-status" role="alert"></div>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 

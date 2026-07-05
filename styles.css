@@ -73,6 +73,7 @@ ul { padding-left: 1.2em; }
 
 section { padding: 72px 0; }
 .section-soft { background: var(--bg-soft); }
+.section-soft-nobg { background: none; }
 .section-tight { padding: 48px 0; }
 
 /* Skip link for accessibility */
@@ -186,7 +187,9 @@ summary:focus-visible {
   color: var(--purple);
 }
 .logo:hover { text-decoration: none; }
-.logo-mark { width: 34px; height: 34px; flex-shrink: 0; }
+.logo-mark { 
+  flex-shrink: 0; 
+  width: 100px;}
 
 .main-nav {
   display: flex;
@@ -545,6 +548,88 @@ summary:focus-visible {
 }
 
 /* =========================================================
+   About page specific
+   ========================================================= */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.photo-collage {
+  position: relative;
+  min-height: 420px;
+}
+.collage-circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 12px 28px rgba(32, 26, 46, 0.14);
+}
+.collage-circle--small {
+  width: 140px;
+  height: 140px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.collage-circle--large {
+  width: 300px;
+  height: 300px;
+  top: 120px;
+  left: 70px;
+  z-index: 1;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 0.55fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.mission-icon {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  color: var(--purple);
+}
+
+/* Team */
+.team-lead {
+  text-align: center;
+  margin: 32px 0 48px;
+}
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+.team-lead .team-photo { width: 170px; height: 170px; }
+.team-name { font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.team-role { color: var(--muted); font-size: 0.9rem; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 24px;
+  text-align: center;
+}
+.team-member .team-photo { width: 130px; height: 130px; }
+
+.avatar-placeholder {
+  background: var(--placeholder-bg);
+  border: 1.5px dashed #C9BFE0;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-placeholder svg { width: 38%; height: 38%; opacity: 0.6; }
+
+/* =========================================================
    Service page specific (used by employment/business/digital/welfare)
    ========================================================= */
 .service-hero-grid {
@@ -650,13 +735,17 @@ summary:focus-visible {
    Responsive
    ========================================================= */
 @media (max-width: 900px) {
-  .hero-grid, .service-hero-grid, .help-grid, .who-grid, .next-grid, .accordion-body {
+  .hero-grid, .service-hero-grid, .help-grid, .who-grid, .next-grid, .accordion-body,
+  .about-hero-grid, .mission-grid {
     grid-template-columns: 1fr;
   }
   .icon-stack { flex-direction: row; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .service-cards { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-collage { min-height: 340px; max-width: 340px; margin: 0 auto; }
+  .mission-icon { max-width: 160px; }
 
   .main-nav {
     display: none;
@@ -682,6 +771,10 @@ summary:focus-visible {
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .hero { padding: 36px 0 40px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .photo-collage { min-height: 280px; max-width: 260px; }
+  .collage-circle--small { width: 100px; height: 100px; }
+  .collage-circle--large { width: 220px; height: 220px; top: 90px; left: 50px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
