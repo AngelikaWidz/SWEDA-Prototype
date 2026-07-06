@@ -780,3 +780,42 @@ summary:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* CASE STUDIES */
+
+.cs-quicknav {
+  display: flex;
+  gap: 120px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.cs-service-section { 
+  padding: 36px 0;
+}
+
+.cs-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .cs-quicknav { gap: 40px; }
+  .cs-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.cs-service-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.cs-heading-purple { color: var(--purple); }
+.cs-heading-pink { color: var(--pink); }
+.cs-heading-orange { color: var(--orange); }
+.cs-heading-indigo { color: var(--indigo); }

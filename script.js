@@ -92,3 +92,45 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+/* =========================================================
+   case-studies.js
+   Page-specific behaviour for case-studies.html only:
+   filters the service sections by category.
+   Include this AFTER js/script.js.
+
+   Progressive enhancement: the page works fine without this
+   file (all case studies are simply visible, grouped under
+   their service heading, and the quick-nav links still jump
+   to each section) — this just adds the "show only one
+   service" filter buttons on top.
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+  var buttons = document.querySelectorAll('.cs-filter-btn');
+  var sections = document.querySelectorAll('.cs-service-section');
+
+  if (!buttons.length || !sections.length) return;
+
+  // Flag that JS is available, so the "filters need JavaScript" note can hide.
+  document.body.classList.add('js-enabled');
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+
+      buttons.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      sections.forEach(function (section) {
+        var category = section.getAttribute('data-category');
+        var show = (filter === 'all' || category === filter);
+        section.style.display = show ? '' : 'none';
+      });
+    });
+  });
+});
