@@ -783,12 +783,38 @@ summary:focus-visible {
 
 /* CASE STUDIES */
 
+#cs-hero { padding-bottom: 0; }
+
 .cs-quicknav {
   display: flex;
-  gap: 120px;
+  gap: 24px;
   flex-wrap: wrap;
   margin-top: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.cs-quicknav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  padding: 1% 1%;
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease;
+}
+
+
+.cs-dot-purple { 
+  border-color: var(--purple);
+background-color: var(--purple); 
+}
+.cs-dot-pink { border-color: var(--pink);
+background-color: var(--pink); }
+.cs-dot-orange { border-color: var(--orange); 
+background-color: var(--orange); }
+.cs-dot-indigo { border-color: var(--indigo); 
+background-color: var(--indigo); }
 
 .cs-service-section { 
   padding: 36px 0;
@@ -798,12 +824,19 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 32px;
+  margin-top: 10px;
 }
 
 @media (max-width: 900px) {
   .cs-quicknav { gap: 40px; }
   .cs-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.cs-card{}
+
+.cs-card-tag {
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .cs-service-heading {
@@ -815,7 +848,22 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 
-.cs-heading-purple { color: var(--purple); }
-.cs-heading-pink { color: var(--pink); }
-.cs-heading-orange { color: var(--orange); }
-.cs-heading-indigo { color: var(--indigo); }
+.cs-heading-purple, .cs-tag-purple { color: var(--purple); }
+.cs-heading-pink, .cs-tag-pink { color: var(--pink); }
+.cs-heading-orange, .cs-tag-orange { color: var(--orange); }
+.cs-heading-indigo, .cs-tag-indigo { color: var(--indigo); }
+
+.placeholder-img-cs-card-image {
+  width: 100%; /* Ensures the image takes full width */
+  height: 200px; /* Set a fixed height for uniformity */
+  overflow: hidden; /* Hides overflow */
+  position: relative; /* Positioning context for absolute children */
+  border-radius: var(--radius);
+}
+
+.placeholder-img-cs-card-image img {
+  object-fit: cover; /* Ensures the image covers the container */
+  width: 100%; /* Ensures the image takes full width */
+  max-height: 200px; /* Ensures the image takes full height */
+  position: absolute; /* Allows positioning within the container */
+}
