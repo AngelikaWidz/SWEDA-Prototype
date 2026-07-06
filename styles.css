@@ -71,6 +71,10 @@ ul { padding-left: 1.2em; }
   padding: 0 24px;
 }
 
+#services-container {
+  padding-bottom: 0px;
+}
+
 section { padding: 72px 0; }
 .section-soft { background: var(--bg-soft); }
 .section-soft-nobg { background: none; }
@@ -263,6 +267,7 @@ summary:focus-visible {
 .hero-contact a { color: var(--ink); }
 .social-row {
   display: flex;
+  justify-content: center;
   gap: 14px;
   margin-bottom: 18px;
 }
@@ -286,7 +291,7 @@ summary:focus-visible {
 /* Generic placeholder block used everywhere a real photo will go */
 .placeholder-img {
   background: var(--placeholder-bg);
-  border: 1.5px dashed #C9BFE0;
+  border: 1.5px solid #C9BFE0;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -299,8 +304,14 @@ summary:focus-visible {
   font-size: 0.85rem;
   text-align: center;
   min-height: 260px;
-  padding: 20px;
 }
+.placeholder-img img { 
+  max-width: 100%; 
+  height: auto; 
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
 .placeholder-img svg { width: 42px; height: 42px; opacity: 0.6; }
 
 /* =========================================================
@@ -439,7 +450,7 @@ summary:focus-visible {
   align-items: center;
   margin-top: 24px;
 }
-.funder-logo {
+/* .funder-logo {
   height: 60px;
   min-width: 140px;
   padding: 0 18px;
@@ -452,7 +463,7 @@ summary:focus-visible {
   font-weight: 600;
   font-size: 0.85rem;
   text-align: center;
-}
+} */
 
 /* =========================================================
    Forms
@@ -565,7 +576,7 @@ summary:focus-visible {
   position: absolute;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #fff;
+  border: 1px solid #fff;
   box-shadow: 0 12px 28px rgba(32, 26, 46, 0.14);
 }
 .collage-circle--small {
@@ -575,6 +586,7 @@ summary:focus-visible {
   left: 0;
   z-index: 2;
 }
+
 .collage-circle--large {
   width: 300px;
   height: 300px;
@@ -583,9 +595,11 @@ summary:focus-visible {
   z-index: 1;
 }
 
+.collage-circle--large img { width: 100%; height: 100%; object-fit: cover; }
+.collage-circle--small img { width: 100%; height: 100%; object-fit: cover; }
+
 .mission-grid {
   display: grid;
-  grid-template-columns: 0.55fr 1fr;
   gap: 48px;
   align-items: center;
 }
@@ -720,7 +734,7 @@ summary:focus-visible {
 .todo-badge {
   display: inline-block;
   background: var(--bg-soft);
-  border: 1px dashed var(--border);
+  border: 1px solid var(--border);
   color: var(--muted);
   font-weight: 700;
   font-size: 0.8rem;
@@ -853,7 +867,7 @@ background-color: var(--indigo); }
 .cs-heading-orange, .cs-tag-orange { color: var(--orange); }
 .cs-heading-indigo, .cs-tag-indigo { color: var(--indigo); }
 
-.placeholder-img-cs-card-image {
+.placeholder-img-cs-card-image  {
   width: 100%; /* Ensures the image takes full width */
   height: 200px; /* Set a fixed height for uniformity */
   overflow: hidden; /* Hides overflow */
